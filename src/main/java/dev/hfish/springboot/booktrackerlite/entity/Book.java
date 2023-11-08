@@ -1,6 +1,7 @@
 package dev.hfish.springboot.booktrackerlite.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 /**
  * Book entity is mapped to database, id is auto generated, and title/author/page fields are provided by user

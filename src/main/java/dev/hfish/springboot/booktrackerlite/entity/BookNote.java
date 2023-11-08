@@ -1,26 +1,35 @@
 package dev.hfish.springboot.booktrackerlite.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  * BookNote entity maps user entered text related to specific book to database, notes are created/viewed through the
  * "/bookNote" endpoint
- * The bookId field denotes the book (from book_catalog table) that this note "belongs" to
+ * The bookId field denotes the book (from "book" table) that this note "belongs" to
  */
 
-// @Entity
-// @Table(name = "book_notes")
+@Entity
+@Table(name = "note")
 public class BookNote {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
-    private int bookId;
-    private String text;
 
-    public BookNote(int id, int bookId, String text) {
-        this.id = id;
-        this.bookId = bookId;
-        this.text = text;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_id")
+    private Book bookId;
+
+    public BookNote() {
+
     }
+
+    public BookNote(Book theBookId) {
+        bookId = theBookId;
+    }
+
+    @Column(name = "body")
+    private String body;
 
     public int getId() {
         return id;
@@ -30,20 +39,20 @@ public class BookNote {
         this.id = id;
     }
 
-    public int getBookId() {
+    public Book getBookId() {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(Book bookId) {
         this.bookId = bookId;
     }
 
-    public String getText() {
-        return text;
+    public String getBody() {
+        return body;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setBody(String text) {
+        this.body = text;
     }
 
     @Override
@@ -51,7 +60,7 @@ public class BookNote {
         return "BookNote{" +
                 "id=" + id +
                 ", bookId=" + bookId +
-                ", text='" + text + '\'' +
+                ", body='" + body + '\'' +
                 '}';
     }
 }

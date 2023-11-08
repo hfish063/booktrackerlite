@@ -1,4 +1,4 @@
-package dev.hfish.springboot.booktrackerlite.service;
+package dev.hfish.springboot.booktrackerlite.service.book;
 
 import dev.hfish.springboot.booktrackerlite.entity.Book;
 import dev.hfish.springboot.booktrackerlite.repository.BookRepository;

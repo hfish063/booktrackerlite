@@ -1,4 +1,4 @@
-package dev.hfish.springboot.booktrackerlite.service;
+package dev.hfish.springboot.booktrackerlite.service.description;
 
 import dev.hfish.springboot.booktrackerlite.pojo.BookDescription;
 

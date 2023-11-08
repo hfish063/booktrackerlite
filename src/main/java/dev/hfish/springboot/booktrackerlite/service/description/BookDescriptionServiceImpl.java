@@ -1,10 +1,10 @@
-package dev.hfish.springboot.booktrackerlite.service;
+package dev.hfish.springboot.booktrackerlite.service.description;
 
 import dev.hfish.springboot.booktrackerlite.entity.Book;
 import dev.hfish.springboot.booktrackerlite.pojo.BookDescription;
+import dev.hfish.springboot.booktrackerlite.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
