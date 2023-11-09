@@ -56,6 +56,12 @@
                     Add/View Notes
                 </a>
 
+                <!-- Get description for book -->
+                <a th:href="@{/books/showBookDescription}"
+                   class="btn btn-info btn-sm">
+                    Description
+                </a>
+
                 <!-- Delete book -->
                 <a th:href="@{/books/delete(bookId=${tempBook.id})}"
                    class="btn btn-danger btn-sm"

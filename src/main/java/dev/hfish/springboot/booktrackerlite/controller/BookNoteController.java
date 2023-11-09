@@ -28,7 +28,7 @@ public class BookNoteController {
         return "note-form";
     }
 
-    // mapping for PUT "/save" ... update note with corresponding id in the database
+    // mapping for POST "/save" ... save note with corresponding id in the database
     @PostMapping("/save")
     public String saveBookNote(@ModelAttribute("book_note") BookNote theBookNote) {
         bookNoteService.save(theBookNote);

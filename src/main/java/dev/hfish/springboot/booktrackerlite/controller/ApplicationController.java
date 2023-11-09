@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * TODO: Application docs
+ */
+
 @Controller
 @RequestMapping("/books")
 public class ApplicationController {
@@ -22,7 +26,7 @@ public class ApplicationController {
     // mapping for GET "/" ... redirects to home page
     @GetMapping("/")
     public String index() {
-        return "redirect:/books";
+        return "redirect:/books/home";
     }
 
     // mapping for GET "/home" ... displays the home page
@@ -51,6 +55,13 @@ public class ApplicationController {
         theModel.addAttribute("book", theBook);
 
         return "book-form";
+    }
+
+    // TODO: implement book description functionality, update html view
+    // mapping for GET "/showBookDescription" ... display description of book, obtained from http request to API
+    @GetMapping("showBookDescription")
+    public String showBookDescription(Model theModel) {
+        return "book-description";
     }
 
     // mapping for DELETE "/delete" ... delete book by id from database
