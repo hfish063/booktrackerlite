@@ -4,6 +4,7 @@ import dev.hfish.springboot.booktrackerlite.entity.Book;
 import dev.hfish.springboot.booktrackerlite.entity.BookNote;
 import dev.hfish.springboot.booktrackerlite.repository.BookNoteRepository;
 import dev.hfish.springboot.booktrackerlite.repository.BookRepository;
+import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

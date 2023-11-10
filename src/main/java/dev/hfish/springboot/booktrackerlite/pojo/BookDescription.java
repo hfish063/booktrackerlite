@@ -9,6 +9,9 @@ package dev.hfish.springboot.booktrackerlite.pojo;
 public class BookDescription {
     private String description;
 
+    public BookDescription() {
+    }
+
     public BookDescription(String description) {
         this.description = description;
     }

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
 /**
- * Book entity is mapped to database, id is auto generated, and title/author/page fields are provided by user
+ * Book entity is mapped to database, id is auto generated, and title/author fields are provided by user
  * from html form
  * TODO: Documentation
  */
@@ -22,9 +22,6 @@ public class Book {
 
     @Column(name = "author")
     private String author;
-
-    @Column(name = "page")
-    private int page;
 
     public int getId() {
         return id;
@@ -50,21 +47,12 @@ public class Book {
         this.author = author;
     }
 
-    public int getPage() {
-        return page;
-    }
-
-    public void setPage(int page) {
-        this.page = page;
-    }
-
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", page=" + page +
                 '}';
     }
 }

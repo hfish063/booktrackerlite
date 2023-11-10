@@ -57,13 +57,6 @@ public class ApplicationController {
         return "book-form";
     }
 
-    // TODO: implement book description functionality, update html view
-    // mapping for GET "/showBookDescription" ... display description of book, obtained from http request to API
-    @GetMapping("showBookDescription")
-    public String showBookDescription(Model theModel) {
-        return "book-description";
-    }
-
     // mapping for DELETE "/delete" ... delete book by id from database
     @GetMapping("/delete")
     public String deleteBook(@RequestParam("bookId") int theBookId) {
