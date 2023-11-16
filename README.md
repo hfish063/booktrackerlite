@@ -9,6 +9,9 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
   - Note: User interface such as MySQL workbench will make this step much easier
 - Clone this repo ... and change the application properties in the resources file to match your db login information
 - Use the provided SQL script to create the required table in your database
+  ![Screenshot 2023-11-15 at 6 34 35 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/3f4502e8-1d8c-4fde-aaa0-a297a247f54c)
+
+  ![Screenshot 2023-11-15 at 6 34 02 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/9e89d631-d5d0-47c7-ace2-8154dfaa62c2)
 
 ## User guide
 
