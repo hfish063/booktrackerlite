@@ -30,7 +30,7 @@
         <tr>
             <th>Title</th>
             <th>Author</th>
-            <!-- <th>Page</th> -->
+            <th>Page</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -40,13 +40,19 @@
 
             <td th:text="${tempBook.title}" />
             <td th:text="${tempBook.author}" />
-            <!-- <td th:text="${tempBook.page}" /> -->
+            <td th:text="${tempBook.page}" />
             <!-- Buttons for update book and delete book -->
             <td>
                 <!-- Add/View Book note -->
-                <a th:href="@{/notes/showNoteForm(bookId=${tempBook.id})}"
+                <a th:href="@{/books/showNoteForm(bookId=${tempBook.id})}"
                    class="btn btn-info btn-sm">
                     Add/View Notes
+                </a>
+
+                <!-- Update book -->
+                <a th:href="@{/books/showUpdateForm(bookId=${tempBook.id})}"
+                   class="btn btn-info btn-sm">
+                    Update
                 </a>
 
                 <!-- Get description for book -->

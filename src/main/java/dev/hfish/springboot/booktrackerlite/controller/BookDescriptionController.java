@@ -21,9 +21,10 @@ public class BookDescriptionController {
 
     // TODO: implement book description functionality, update html view
     // mapping for GET "/showBookDescription" ... display description of book, obtained from http request to API
+    // usage:
     @GetMapping("/showBookDescription")
     public String showBookDescription(@RequestParam("bookId") int theBookId, Model theModel) {
-        BookDescription theBookDescription = bookDescriptionService.getDescription(theBookId);
+        BookDescription theBookDescription = bookDescriptionService.findDescription(theBookId);
 
         theModel.addAttribute("book_description", theBookDescription);
 

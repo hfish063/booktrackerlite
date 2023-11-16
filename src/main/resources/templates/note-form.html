@@ -21,12 +21,15 @@
 
     <p class="h4 mb-4">Update Note</p>
 
-    <form action="#" th:action="@{/notes/save}" th:object="${book_note}" method="POST">
+    <form action="#" th:action="@{/books/save}" th:object="${book}" method="POST">
         <!-- Add hidden form field to handle the update -->
         <input type="hidden" th:field="*{id}">
-        <input type="hidden" th:field="*{bookId}">
+        <input type="hidden" th:field="*{title}">
+        <input type="hidden" th:field="*{author}">
+        <input type="hidden" th:field="*{page}">
 
-        <input type="text" th:field="*{body}" class="form-control mb-4 w-25" th:value="*{body}">
+
+        <input type="text" th:field="*{note}" class="form-control mb-4 w-25" th:value="*{note}">
 
         <button type="submit" class="btn btn-info col-2">Update</button>
     </form>

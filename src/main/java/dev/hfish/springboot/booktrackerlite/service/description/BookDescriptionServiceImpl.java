@@ -1,7 +1,9 @@
 package dev.hfish.springboot.booktrackerlite.service.description;
 
 import dev.hfish.springboot.booktrackerlite.pojo.BookDescription;
+import dev.hfish.springboot.booktrackerlite.restclient.OpenLibraryClient;
 import dev.hfish.springboot.booktrackerlite.service.book.BookService;
+import org.aspectj.apache.bcel.classfile.Module;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
@@ -12,15 +14,15 @@ public class BookDescriptionServiceImpl implements BookDescriptionService {
     private final String resourceUrl = "https://openlibrary.org";
 
     BookService bookService;
-    RestTemplate restTemplate;
+    OpenLibraryClient openLibraryClient;
 
     @Autowired
-    public BookDescriptionServiceImpl(BookService theBookService, RestTemplateBuilder theRestTemplateBuilder) {
+    public BookDescriptionServiceImpl(BookService theBookService, OpenLibraryClient theOpenLibraryClient) {
         bookService = theBookService;
-        restTemplate = theRestTemplateBuilder.build();
+        openLibraryClient = theOpenLibraryClient;
     }
 
-    //TODO: generate a book description through open library api for book w/ corresponding id
+    // TODO: generate a book description through open library api for book w/ corresponding id
 
     /**
      * Returns a book description with corresponding description text from API call
@@ -31,7 +33,9 @@ public class BookDescriptionServiceImpl implements BookDescriptionService {
      * @param bookId id of the book we are finding description for
      * @return BookDescription object, description field contains our findings
      */
-    public BookDescription getDescription(int bookId) {
-        return new BookDescription("Demo response for bookId - " + bookId);
+    public BookDescription findDescription(int bookId) {
+        String theDescription = openLibraryClient.getDescription(bookId);
+
+        return new BookDescription(theDescription);
     }
 }

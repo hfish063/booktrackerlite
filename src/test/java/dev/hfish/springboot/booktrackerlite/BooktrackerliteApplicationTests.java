@@ -9,5 +9,4 @@ class BooktrackerliteApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

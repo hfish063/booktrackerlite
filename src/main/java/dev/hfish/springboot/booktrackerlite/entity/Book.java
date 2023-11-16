@@ -1,12 +1,13 @@
 package dev.hfish.springboot.booktrackerlite.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
 
 /**
  * Book entity is mapped to database, id is auto generated, and title/author fields are provided by user
  * from html form
- * TODO: Documentation
+ *
+ * @author haydenfish
+ * @version 11.15.2023
  */
 
 @Entity
@@ -22,6 +23,12 @@ public class Book {
 
     @Column(name = "author")
     private String author;
+
+    @Column(name = "page")
+    private Integer page;
+
+    @Column(name = "note")
+    private String note;
 
     public int getId() {
         return id;
@@ -47,12 +54,30 @@ public class Book {
         this.author = author;
     }
 
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
+                ", page=" + page +
+                ", note='" + note + '\'' +
                 '}';
     }
 }
