@@ -12,10 +12,9 @@
     <title>BookLite Home</title>
 </head>
 
-<body>
+<body style="background-color: antiquewhite;">
 
 <div class="container">
-
     <h3>Book Catalog</h3>
     <hr>
 
@@ -35,7 +34,7 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody style="background-color: beige;">
         <tr th:each="tempBook : ${books}">
 
             <td th:text="${tempBook.title}" />

@@ -30,6 +30,17 @@ public class Book {
     @Column(name = "note")
     private String note;
 
+    public Book() {
+
+    }
+
+    public Book(String title, String author, Integer page, String note) {
+        this.title = title;
+        this.author = author;
+        this.page = page;
+        this.note = note;
+    }
+
     public int getId() {
         return id;
     }

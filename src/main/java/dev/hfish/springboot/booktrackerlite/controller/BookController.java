@@ -35,9 +35,9 @@ public class BookController {
 
     @GetMapping("/home")
     public String showHome(Model theModel) {
-        List<Book> theBooks = bookService.findAll();
+        List<Book> listOfAllBooks = bookService.findAll();
 
-        theModel.addAttribute("books", theBooks);
+        theModel.addAttribute("books", listOfAllBooks);
 
         return "home";
     }

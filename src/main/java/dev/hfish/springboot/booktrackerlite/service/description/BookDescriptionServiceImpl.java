@@ -30,12 +30,12 @@ public class BookDescriptionServiceImpl implements BookDescriptionService {
      * then sending an initial GET request to find our title's key in library database,
      * when we have the key then we are able to search for a single work, and get its description
      *
-     * @param bookId id of the book we are finding description for
+     * @param theBookId id of the book we are finding description for, should be primary key of integer value
      * @return BookDescription object, description field contains our findings
      */
-    public BookDescription findDescription(int bookId) {
-        String theDescription = openLibraryClient.getDescription(bookId);
+    public BookDescription findDescription(int theBookId) {
+        String getDescriptionText = openLibraryClient.getDescription(theBookId);
 
-        return new BookDescription(theDescription);
+        return new BookDescription(getDescriptionText);
     }
 }

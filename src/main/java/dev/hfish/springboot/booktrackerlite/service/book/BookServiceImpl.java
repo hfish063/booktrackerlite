@@ -20,7 +20,7 @@ public class BookServiceImpl implements BookService {
     /**
      * Return list of all books in catalog
      *
-     * @return list of every book in the database
+     * @return list containing every book in the database
      */
     @Override
     public List<Book> findAll() {
@@ -30,7 +30,7 @@ public class BookServiceImpl implements BookService {
     /**
      * Find a book by the id, throw exception if we are unable to locate a book w/ corresponding id
      *
-     * @param theId id of the book to search catalog for
+     * @param theId id of the book to search catalog for, should be primary key of integer value
      * @return book object with specified id, null if not found
      */
     @Override
