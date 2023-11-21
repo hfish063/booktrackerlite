@@ -18,7 +18,7 @@ public class BookServiceImpl implements BookService {
     }
 
     /**
-     * Return list of all books in catalog
+     * Return list of all books in catalog, always returns empty list if db is empty
      *
      * @return list containing every book in the database
      */
@@ -29,6 +29,7 @@ public class BookServiceImpl implements BookService {
 
     /**
      * Find a book by the id, throw exception if we are unable to locate a book w/ corresponding id
+     * and return null
      *
      * @param theId id of the book to search catalog for, should be primary key of integer value
      * @return book object with specified id, null if not found
@@ -51,7 +52,7 @@ public class BookServiceImpl implements BookService {
      * Save book object to book_catalog database
      *
      * @param theBook user provided book to save in database
-     * @return the book we are saving
+     * @return the book that was saved, return value used in test cases
      */
     @Override
     public Book save(Book theBook) {
@@ -61,7 +62,7 @@ public class BookServiceImpl implements BookService {
     /**
      * Delete a book object with specified id from book_catalog database
      *
-     * @param theId id of the book we are deleting
+     * @param theId id of the book we are deleting, must be a valid db entry
      */
     @Override
     public void deleteById(int theId) {

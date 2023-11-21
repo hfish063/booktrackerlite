@@ -1,9 +1,15 @@
 package dev.hfish.springboot.booktrackerlite.restclient;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
+import java.io.StringReader;
 
 /**
  * IMPORTANT NOTE: the search functionality of client class relies on a correctly spelt book title, else we will not
@@ -16,10 +22,15 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class OpenLibraryClient {
     private RestTemplate restTemplate;
+    private ClientHelper clientHelper;
+    private ObjectMapper objectMapper;
 
     @Autowired
-    public OpenLibraryClient(RestTemplateBuilder restTemplateBuilder) {
+    public OpenLibraryClient(RestTemplateBuilder restTemplateBuilder, ClientHelper theClientHelper,
+                             ObjectMapper theObjectMapper) {
         restTemplate = restTemplateBuilder.build();
+        clientHelper = theClientHelper;
+        objectMapper = theObjectMapper;
     }
 
     /**
@@ -28,19 +39,52 @@ public class OpenLibraryClient {
      * uses book's key to search for the description
      * usage: instantiate new BookDescription object, and use this method to set the 'description' field
      *
-     * @param theBookId id field of the book object we are finding a description for
-     * @return String containing description text
+     * @param theBookTitle title field of the book we are finding desc. for, spelling errors are not valid
+     * @return String containing description text, null if not found
      */
-    public String getDescription(int theBookId) {
-        // TODO: implement getDescription client method
+    // TODO: getDescription() method
+    public String getDescription(String theBookTitle) {
         // the key is a sequence of characters serving as an 'id' for finding book title through API
-        // first step is to send http GET request and find key from response
         String key = null;
+        String description = null;
 
-        // using the key, we can use the search functionality of API, and access specific information for a single book
-        String description = "Hello World!";
+        key = clientHelper.findBookKey(theBookTitle);
 
-        // return entire description of book
-        return description;
+        String uri = "https://openlibrary.org" + key + ".json"; // .json must be used to get json format response
+
+        ResponseEntity<String> apiResponse = restTemplate.getForEntity(uri, String.class);
+        String jsonString = String.valueOf(apiResponse);
+        jsonString = clientHelper.removeHttpStatus(jsonString);
+
+        return parseJsonForDescription(jsonString);
+    }
+
+    private String parseJsonForDescription(String theJsonString) {
+        JsonNode rootNode = null;
+        JsonNode descriptionNode = findDescriptionJsonNode(rootNode, new StringReader(theJsonString));
+
+        if (descriptionNode == null) {
+            return null;
+        }
+
+        // stub
+        return descriptionNode.asText();
+    }
+
+    private JsonNode findDescriptionJsonNode(JsonNode theRootNode, StringReader theJsonStringReader) {
+        try {
+            theRootNode = objectMapper.readTree(theJsonStringReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JsonNode descriptionNode = theRootNode.get("description");
+
+        // if description is not found, check 'value' attribute
+        if (descriptionNode != null && descriptionNode.asText().isBlank()) {
+            return descriptionNode.get("value");
+        }
+
+        return descriptionNode;
     }
 }

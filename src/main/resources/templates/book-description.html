@@ -12,14 +12,14 @@
   <title>View Description</title>
 </head>
 
-<body>
+<body style="background-color: antiquewhite;">
 
 <div class="container">
 
   <h3>Description</h3>
   <hr>
 
-  <p class="h4 mb-4">Description</p>
+  <p class="h4 mb-4" th:text="${book_title}"></p>
 
   <!-- Add the description for specified book -->
   <p th:text="${book_description.getDescription()}"></p>

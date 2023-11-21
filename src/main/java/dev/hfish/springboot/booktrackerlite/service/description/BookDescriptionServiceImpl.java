@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class BookDescriptionServiceImpl implements BookDescriptionService {
-    private final String resourceUrl = "https://openlibrary.org";
+    private final String descriptionNotFoundResponse = "Unable to locate a description for this title.";
 
     BookService bookService;
     OpenLibraryClient openLibraryClient;
@@ -30,11 +30,15 @@ public class BookDescriptionServiceImpl implements BookDescriptionService {
      * then sending an initial GET request to find our title's key in library database,
      * when we have the key then we are able to search for a single work, and get its description
      *
-     * @param theBookId id of the book we are finding description for, should be primary key of integer value
+     * @param theBookTitle title of the book we are finding description for, spelling errors are not valid
      * @return BookDescription object, description field contains our findings
      */
-    public BookDescription findDescription(int theBookId) {
-        String getDescriptionText = openLibraryClient.getDescription(theBookId);
+    public BookDescription findDescription(String theBookTitle) {
+        String getDescriptionText = openLibraryClient.getDescription(theBookTitle);
+
+        if (getDescriptionText == null) {
+            return new BookDescription(descriptionNotFoundResponse);
+        }
 
         return new BookDescription(getDescriptionText);
     }

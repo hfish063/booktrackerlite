@@ -45,7 +45,7 @@
                 <!-- Add/View Book note -->
                 <a th:href="@{/books/showNoteForm(bookId=${tempBook.id})}"
                    class="btn btn-info btn-sm">
-                    Add/View Notes
+                    Notes
                 </a>
 
                 <!-- Update book -->
@@ -55,7 +55,7 @@
                 </a>
 
                 <!-- Get description for book -->
-                <a th:href="@{/description/showBookDescription(bookId=${tempBook.id})}"
+                <a th:href="@{/description/showBookDescription(bookTitle=${tempBook.title})}"
                    class="btn btn-info btn-sm">
                     Description
                 </a>
