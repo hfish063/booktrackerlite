@@ -18,6 +18,16 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
 ## User guide
 
 ### Overview of catalog
-![Screenshot 2023-11-10 at 12 55 05 AM](https://github.com/hfish063/booktrackerlite/assets/123512041/c0fe1cf0-4fe7-40fe-beb4-30772cdf1acd)
+![Screenshot 2023-11-20 at 7 01 20 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/269dd2a5-a633-4a1f-8d1a-999056889788)
+
+### Add notes
+![Screenshot 2023-11-20 at 7 02 01 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/33c20414-c630-407f-a96e-5b87991dc3b6)
+
+### Update a book
+![Screenshot 2023-11-20 at 7 02 28 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/afc11708-448d-436f-af0d-fdd89cb70fa9)
+
+### Get description
+![Screenshot 2023-11-20 at 7 03 05 PM](https://github.com/hfish063/booktrackerlite/assets/123512041/ef5c6dfb-6351-4b75-846d-f567c6ca752e)
+
 
 ## Additional info...
