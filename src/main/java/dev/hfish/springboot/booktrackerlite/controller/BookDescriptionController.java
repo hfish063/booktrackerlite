@@ -19,7 +19,6 @@ public class BookDescriptionController {
         bookDescriptionService = theBookDescriptionService;
     }
 
-    // TODO: implement book description functionality, update html view
     // mapping for GET "/showBookDescription" ... display description of book, obtained from http request to API
     // usage:
     @GetMapping("/showBookDescription")

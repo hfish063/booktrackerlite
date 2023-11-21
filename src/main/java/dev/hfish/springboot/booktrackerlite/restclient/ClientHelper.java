@@ -1,6 +1,5 @@
 package dev.hfish.springboot.booktrackerlite.restclient;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,7 @@ public class ClientHelper {
         objectMapper = theObjectMapper;
     }
 
+    // TODO: Method documentation
     public String findBookKey(String theBookTitle) {
         String key = null;
         if (theBookTitle.isBlank()) {
@@ -42,10 +42,7 @@ public class ClientHelper {
     }
 
     private String parseJsonForKey(String theJsonString) {
-        //String jsonKey = null;
-        JsonNode rootNode = null;
-
-        JsonNode keyNode = findKeyJsonNode(rootNode, new StringReader(theJsonString));
+        JsonNode keyNode = findKeyJsonNode(new StringReader(theJsonString));
 
         if (keyNode == null) {
             return null;
@@ -54,18 +51,24 @@ public class ClientHelper {
         return keyNode.asText();
     }
 
-    private JsonNode findKeyJsonNode(JsonNode theRootNode, StringReader theJsonStringReader) {
+    private JsonNode findKeyJsonNode(StringReader theJsonStringReader) {
+        JsonNode rootNode = findRootJsonNode(theJsonStringReader);
 
-        try {
-            theRootNode = objectMapper.readTree(theJsonStringReader);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // return jsonKey;
-        }
-
-        JsonNode innerNode = theRootNode.get("docs");
+        JsonNode innerNode = rootNode.get("docs");
 
         return innerNode.get(0).get("key");
+    }
+
+    private JsonNode findRootJsonNode(StringReader theJsonStringReader) {
+        JsonNode rootNode = null;
+
+        try {
+            rootNode = objectMapper.readTree(theJsonStringReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return rootNode;
     }
 
     private String formatBookTitle(String theBookTitle) {
@@ -83,6 +86,7 @@ public class ClientHelper {
         int currIndex = 0;
         char[] temp = theJsonString.toCharArray();
 
+        // TODO: data validation
         while (temp[currIndex] != '{') {
             temp[currIndex] = ' ';
             currIndex++;

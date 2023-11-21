@@ -42,7 +42,6 @@ public class OpenLibraryClient {
      * @param theBookTitle title field of the book we are finding desc. for, spelling errors are not valid
      * @return String containing description text, null if not found
      */
-    // TODO: getDescription() method
     public String getDescription(String theBookTitle) {
         // the key is a sequence of characters serving as an 'id' for finding book title through API
         String key = null;

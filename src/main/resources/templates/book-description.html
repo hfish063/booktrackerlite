@@ -22,7 +22,7 @@
   <p class="h4 mb-4" th:text="${book_title}"></p>
 
   <!-- Add the description for specified book -->
-  <p th:text="${book_description.getDescription()}"></p>
+  <p th:text="${book_description.getDescription()}" style="background-color: white; padding: 10px"></p>
 
   <hr>
   <a th:href="@{/books/home}">Back to Book Catalog</a>
