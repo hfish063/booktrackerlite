@@ -25,11 +25,12 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
 
 ### Add notes
 ![Screenshot 2023-11-20 at 7 02 01 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.17.59%E2%80%AFPM.png?raw=true)
-- Add/Update notes for specific title
+- Add/update notes for specific title
 - Includes any String of words, will be saved in the db alongside other book data
 
 ### Update a book
 ![Screenshot 2023-11-20 at 7 02 28 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.18.09%E2%80%AFPM.png?raw=true)
+- Change title/author, increment/decrement page numbers
 
 ### Get description
 ![Screenshot 2023-11-20 at 7 03 05 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-21%20at%2012.47.09%E2%80%AFAM.png?raw=true)
