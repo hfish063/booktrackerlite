@@ -1,6 +1,7 @@
 # booktrackerlite
 
 **booktrackerlite** is a personal project for myself, an avid reader.  It's intended use is as a way for me to track my current reading list, and write basic notes for novels that I _have_ read, or am currently reading.
+
 The usage for this application is intended to be lightweight and straightforward, it includes only necessary functionality for the above purposes.
 
 **NOTE:** README is not complete, disregard the directions listed below.
