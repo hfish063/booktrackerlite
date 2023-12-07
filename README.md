@@ -30,7 +30,7 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
 
 ### Update a book
 ![Screenshot 2023-11-20 at 7 02 28 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.18.09%E2%80%AFPM.png?raw=true)
-- Change title/author, increment/decrement page numbers
+- Change title/author, increment/decrement current page number
 
 ### Get description
 ![Screenshot 2023-11-20 at 7 03 05 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-21%20at%2012.47.09%E2%80%AFAM.png?raw=true)
