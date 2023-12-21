@@ -9,6 +9,8 @@ The usage for this application is intended to be lightweight and straightforward
 ## How to run application
 The booktrackerlite web app is designed as a personal project, for my own use, and to demonstrate my proficiency with the spring framework in java.  As I have no current nor future plans to host this web app asides from on my local machine, there are necessary steps you need to take to get it running.
 
+The steps listed below assume you already have proper Javen and Maven environments setup on your device - for more information on this see here: [apache maven](https://maven.apache.org/install.html)
+
 ### Database connection
 - Download MySQL, and host a db server - note your login credentials, these will be needed later
   - Note: User interface such as MySQL workbench will make this step much easier
