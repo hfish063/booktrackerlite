@@ -18,7 +18,7 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
 - Clone this repo
 - After opening the project folder with your IDE of choice, move to the `application.properties` file
 - In this file, **edit** the credentials to match your database login information, additionally, you will need to add your own datasource url (this might vary depending on the port db is being hosted from)
-- 
+  
   ![Screenshot 2023-11-15 at 6 34 35 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.19.49%E2%80%AFPM.png?raw=true)
 
   ![Screenshot 2023-11-15 at 6 34 02 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.20.01%E2%80%AFPM.png?raw=true)
