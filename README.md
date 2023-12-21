@@ -36,6 +36,7 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
 
 ### Get description
 ![Screenshot 2023-11-20 at 7 03 05 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-21%20at%2012.47.09%E2%80%AFAM.png?raw=true)
+- Book descriptions obtained through the *OpenLibrary* Api, unavailable titles will generate empty descriptions
 
 
 ## Additional info...
