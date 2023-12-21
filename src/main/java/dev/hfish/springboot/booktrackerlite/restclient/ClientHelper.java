@@ -22,7 +22,13 @@ public class ClientHelper {
         objectMapper = theObjectMapper;
     }
 
-    // TODO: Method documentation
+    /**
+     * Makes Api call to OpenLibrary to obtain the corresponding key for specified book title,
+     * usage: key is used to search OpenLibrary database directly for description
+     *
+     * @param theBookTitle title of the book we are searching for, incorrect spelling will fail to locate result
+     * @return key String containing the id of book as stored in OpenLibrary db
+     */
     public String findBookKey(String theBookTitle) {
         String key = null;
         if (theBookTitle.isBlank()) {
@@ -37,7 +43,6 @@ public class ClientHelper {
         String jsonString = String.valueOf(apiResponse);
         jsonString = removeHttpStatus(jsonString);
 
-        //return jsonString;
         return parseJsonForKey(jsonString);
     }
 

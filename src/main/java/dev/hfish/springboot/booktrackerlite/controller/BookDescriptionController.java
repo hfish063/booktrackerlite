@@ -20,7 +20,7 @@ public class BookDescriptionController {
     }
 
     // mapping for GET "/showBookDescription" ... display description of book, obtained from http request to API
-    // usage:
+    // usage: obtains the description of specific book title, as called from the 'Get Description' button
     @GetMapping("/showBookDescription")
     public String showBookDescription(@RequestParam("bookTitle") String theBookTitle, Model theModel) {
         BookDescription theBookDescription = bookDescriptionService.findDescription(theBookTitle);

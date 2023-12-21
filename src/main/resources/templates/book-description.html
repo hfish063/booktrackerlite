@@ -24,6 +24,10 @@
   <!-- Add the description for specified book -->
   <p th:text="${book_description.getDescription()}" style="background-color: white; padding: 10px"></p>
 
+  <!-- Display the book cover
+  <img src="https://covers.openlibrary.org/b/olid/OL7440033M-L.jpg"style="width: 5vw; min-width: 330px;" alt="Cover image">
+  -->
+
   <hr>
   <a th:href="@{/books/home}">Back to Book Catalog</a>
 

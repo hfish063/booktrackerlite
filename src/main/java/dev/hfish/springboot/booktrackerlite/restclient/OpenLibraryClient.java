@@ -43,7 +43,7 @@ public class OpenLibraryClient {
      * @return String containing description text, null if not found
      */
     public String getDescription(String theBookTitle) {
-        // the key is a sequence of characters serving as an 'id' for finding book title through API
+        // important: the key is a sequence of characters serving as an 'id' for finding book title through API
         String key = null;
         String description = null;
 
@@ -66,7 +66,6 @@ public class OpenLibraryClient {
             return null;
         }
 
-        // stub
         return descriptionNode.asText();
     }
 

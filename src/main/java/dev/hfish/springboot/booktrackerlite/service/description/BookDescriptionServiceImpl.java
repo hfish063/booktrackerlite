@@ -3,11 +3,8 @@ package dev.hfish.springboot.booktrackerlite.service.description;
 import dev.hfish.springboot.booktrackerlite.pojo.BookDescription;
 import dev.hfish.springboot.booktrackerlite.restclient.OpenLibraryClient;
 import dev.hfish.springboot.booktrackerlite.service.book.BookService;
-import org.aspectj.apache.bcel.classfile.Module;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class BookDescriptionServiceImpl implements BookDescriptionService {
