@@ -4,7 +4,7 @@
 
 The usage for this application is intended to be lightweight and straightforward, it includes only necessary functionality for the above purposes.
 
-**NOTE:** README is not complete, disregard the directions listed below.
+~~**NOTE:** README is not complete, disregard the directions listed below.~~
 
 ## How to run application
 The booktrackerlite web app is designed as a personal project, for my own use, and to demonstrate my proficiency with the spring framework in java.  As I have no current nor future plans to host this web app asides from on my local machine, there are necessary steps you need to take to get it running.
