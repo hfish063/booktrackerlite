@@ -24,7 +24,6 @@ The booktrackerlite web app is designed as a personal project, for my own use, a
   ![Screenshot 2023-11-15 at 6 34 02 PM](https://github.com/hfish063/booktrackerlite/blob/main/screenshots/Screenshot%202023-11-20%20at%207.20.01%E2%80%AFPM.png?raw=true)
 - **Optional** once the above steps are complete, you might want to try and run the included integration/unit tests to ensure functionality
 - Run the BooktrackerliteApplication, and access your app at `localhost:8080/books`
-- Use the provided SQL script to create the required table in your database
 
 ## User guide
 
