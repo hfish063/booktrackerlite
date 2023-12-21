@@ -58,7 +58,6 @@ public class BookControllerTests {
         jdbcTemplate.execute("delete from book");
     }
 
-    @Disabled("Disabled for oauth2")
     @Test
     public void showHomeHttpRequest() throws Exception {
         Book testBookOne = new Book("Think Java", "Mayfield", 1, "");
@@ -78,7 +77,6 @@ public class BookControllerTests {
         ModelAndViewAssert.assertViewName(mav, "home");
     }
 
-    @Disabled("Disabled for oauth2")
     @Test
     public void saveHttpRequest() throws Exception {
         Book testBookOne = new Book("Think Java", "Mayfield", 1, "");
