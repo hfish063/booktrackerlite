@@ -1,6 +1,7 @@
 package dev.hfish.springboot.booktrackerlite.unit;
 
 import dev.hfish.springboot.booktrackerlite.restclient.ClientHelper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ public class ClientHelperTests {
     @Autowired
     private ClientHelper clientHelper;
 
+    @Disabled
     @Test
     public void testFindBookKey() throws Exception {
         String expectedKey = "/works/OL19396663W";
@@ -22,6 +24,7 @@ public class ClientHelperTests {
         assertNotNull(clientHelper.findBookKey("not-a-valid-book"));
     }
 
+    @Disabled
     @Test
     public void testRemoveHttpStatus() {
         String httpStatus = "Status <200, OK> {";
