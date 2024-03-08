@@ -13,7 +13,6 @@ public class ClientHelperTests {
     @Autowired
     private ClientHelper clientHelper;
 
-    @Disabled
     @Test
     public void testFindBookKey() throws Exception {
         String expectedKey = "/works/OL19396663W";
@@ -24,7 +23,6 @@ public class ClientHelperTests {
         assertNotNull(clientHelper.findBookKey("not-a-valid-book"));
     }
 
-    @Disabled
     @Test
     public void testRemoveHttpStatus() {
         String httpStatus = "Status <200, OK> {";
